@@ -252,7 +252,7 @@ const relevantQuestions = async (sources: SearchResult[]): Promise<any> => {
             "original": "The original search query or context",
             "followUp": [
               "Question 1",
-              "Question 2", 
+              "Question 2",
               "Question 3"
             ]
           }

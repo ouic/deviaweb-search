@@ -1,10 +1,6 @@
-# Perplexity-Inspired LLM Answer Engine
+# Perplexity-Inspired LLM Deviaweb Search Engine
 
-[Watch the tutorial here](https://youtu.be/kFC-OWw7G8k) for a detailed guide on setting up and running this project.
-
-![Example](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmJ0ZnhmNjkwYzczZDlqZzM1dDRka2k1MGx6dW02ZHl5dzV0aGQwMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mluzeYSMGoAnSXg0ft/giphy.gif)
-
-This repository contains the code and instructions needed to build a sophisticated answer engine that leverages the capabilities of [Groq](https://www.groq.com/), [Mistral AI's Mixtral](https://mistral.ai/news/mixtral-of-experts/), [Langchain.JS](https://js.langchain.com/docs/), [Brave Search](https://search.brave.com/), [Serper API](https://serper.dev/), and [OpenAI](https://openai.com/). Designed to efficiently return sources, answers, images, videos, and follow-up questions based on user queries, this project is an ideal starting point for developers interested in natural language processing and search technologies.
+This repository contains the code and instructions needed to build a sophisticated search engine that leverages the capabilities of [Groq](https://www.groq.com/), [Mistral AI's Mixtral](https://mistral.ai/news/mixtral-of-experts/), [Langchain.JS](https://js.langchain.com/docs/), [Brave Search](https://search.brave.com/), [Serper API](https://serper.dev/), and [OpenAI](https://openai.com/). Designed to efficiently return sources, answers, images, videos, and follow-up questions based on user queries, this project is an ideal starting point for developers interested in natural language processing and search technologies.
 
 ## Technologies Used
 
@@ -37,7 +33,7 @@ This repository contains the code and instructions needed to build a sophisticat
 
 1. Clone the repository:
     ```
-    git clone https://github.com/developersdigest/llm-answer-engine.git
+    git clone https://github.com/ouic/deviaweb-search.git
     ```
 2. Install the required dependencies:
     ```
@@ -66,7 +62,7 @@ or
 bun run dev
 ```
 
-the server will be listening on the specified port.
+the server will be listening on the 8844 port.
 
 ## Editing the Configuration
 
@@ -74,19 +70,19 @@ The configuration file is located in the `app/config.tsx` file. You can modify t
 
 - useOllamaInference: false,
 - useOllamaEmbeddings: false,
-- inferenceModel: 'mixtral-8x7b-32768', 
-- inferenceAPIKey: process.env.GROQ_API_KEY, 
-- embeddingsModel: 'text-embedding-3-small', 
-- textChunkSize: 800, 
-- textChunkOverlap: 200, 
+- inferenceModel: 'mixtral-8x7b-32768',
+- inferenceAPIKey: process.env.GROQ_API_KEY,
+- embeddingsModel: 'text-embedding-3-small',
+- textChunkSize: 800,
+- textChunkOverlap: 200,
 - numberOfSimilarityResults: 2,
-- numberOfPagesToScan: 10, 
+- numberOfPagesToScan: 10,
 - nonOllamaBaseURL: 'https://api.groq.com/openai/v1'
 
 ### Ollama Support (Partially supported)
 Currently, streaming text responses are supported for Ollama, but follow-up questions are not yet supported.
 
-Embeddings are supported, however, time-to-first-token can be quite long when using both a local embedding model as well as a local model for the streaming inference. I  recommended decreasing a number of the RAG values specified in the `app/config.tsx` file to decrease the time-to-first-token when using Ollama.
+Embeddings are supported, however, time-to-first-token can be quite long when using both a local embedding model as well as a local model for the streaming inference. I recommend decreasing a number of the RAG values specified in the `app/config.tsx` file to decrease the time-to-first-token when using Ollama.
 
 To get started, make sure you have the Ollama running model on your local machine and set within the config the model you would like to use and set use OllamaInference and/or useOllamaEmbeddings to true.
 
@@ -94,20 +90,13 @@ Note: When 'useOllamaInference' is set to true, the model will be used for both 
 
 More info: https://ollama.com/blog/openai-compatibility
 
-### Roadmap
-
-- [In progress] Add support for dynamic and conditionally rendered UI components based on the user's query
-![Example](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN284d3p5azAyNHpubm9mb2F0cnB6MWdtcTdnd2Nkb2d1ZnRtMG0yYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OMpt8ZbBsjphZz6mue/giphy.gif)
-- [] Add a settings component to allow users to select the model, embeddings model, and other parameters from the UI
-- [] Add support for follow-up questions when using Ollama
-
 ### Backend + Node Only Express API
 
 ![Build a Perplexity-Inspired Answer Engine Using Groq, Mixtral, Langchain, Brave & OpenAI in 10 Min](https://img.youtube.com/vi/43ZCeBTcsS8/0.jpg)
 
 In addition to the Next.JS version of the project, there is a backend only version that uses Node.js and Express. Which is located in the 'original-express-api' directory. This is a standalone version of the project that can be used as a reference for building a similar API. There is also a readme file in the 'original-express-api' directory that explains how to run the backend version.
 
-[Watch the express tutorial here](https://youtu.be/43ZCeBTcsS8) for a detailed guide on setting up and running this project. 
+[Watch the express tutorial here](https://youtu.be/43ZCeBTcsS8) for a detailed guide on setting up and running this project.
 
 ## Contributing
 
@@ -116,14 +105,9 @@ Contributions to the project are welcome. Feel free to fork the repository, make
 
 ## License
 
-This project is licensed under the MIT License.
+This project is opensource.
 
-[![Star History Chart](https://api.star-history.com/svg?repos=developersdigest/llm-answer-engine&type=Date)](https://star-history.com/#developersdigest/llm-answer-engine&Date)
+I'm the developer behind Deviaweb. If you find my work helpful or enjoy what I do, consider supporting me. Here are a few ways you can do that:
 
-I'm the developer behind Developers Digest. If you find my work helpful or enjoy what I do, consider supporting me. Here are a few ways you can do that:
-
-- **Patreon**: Support me on Patreon at [patreon.com/DevelopersDigest](https://www.patreon.com/DevelopersDigest)
-- **Buy Me A Coffee**: You can buy me a coffee at [buymeacoffee.com/developersdigest](https://www.buymeacoffee.com/developersdigest)
-- **Website**: Check out my website at [developersdigest.tech](https://developersdigest.tech)
-- **Github**: Follow me on GitHub at [github.com/developersdigest](https://github.com/developersdigest)
-- **Twitter**: Follow me on Twitter at [twitter.com/dev__digest](https://twitter.com/dev__digest)
+- **Website**: Check out my website at [deviaweb.fr](https://deviaweb.fr)
+- **Github**: Follow me on GitHub at [github.com/ouic](https://github.com/ouic)
